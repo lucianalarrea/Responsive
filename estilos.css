@@ -1,34 +1,110 @@
-*{
-    margin: 0;
-    padding:0 ;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+*{ margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --gris:gainsboro;
+    --celeste: skyblue;
+    --celeste-oscuro:rgb(33, 102, 129);
+    --celeste-claro:rgb(204, 237, 250);
 }
 
 body{
-    background-color: yellow;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
-/*consulta el tamaño del navegador para saber si estoy en tablet*/
+h1, h2{
+    font-family: "PT Serif", serif;
+}
+
+header{
+    text-align: center;
+    background-color: var(--gris);
+    padding: 1em;
+}
+header img{
+    width: 120px;
+}
+nav a{
+    font-weight: bold;
+    color: black;
+    margin: 0 0.5em ;
+    font-size: 1.1em ;
+    text-decoration: none;
+}
+
+a{
+    transition: 0.3s;
+}
+nav a:hover{
+    color: var(--celeste-oscuro);
+
+}
+
+h1{
+    color: var(--celeste-oscuro);
+    text-align: center;
+    margin: 1em 0;
+}
+
+.contenedor{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+#productos article{
+padding: 1.2em;
+margin-bottom: 1.2em;
+border-radius: 5px;
+background-color: var(--celeste-claro);
+box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.418);
+display: flex;
+flex-direction: column;
+gap: 1em;
+align-items: flex-start;
+}
+#productos h2{
+    color: var(--celeste-oscuro);
+    font-weight: 400px;
+}
+#productos a{
+    background-color: var(--celeste-oscuro);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+
+/*consulto si estoy en tamaño de tablet*/
 @media all and (min-width:768px){
-    body{
-        background-color: blueviolet;
+    header{
+        display: flex;
+        align-items: center;
+        font-size: 1.1em;
+        justify-content: space-between;
     }
     h1{
-        text-align: center;
+        font-size: 3em;
+    }
+    #productos{
+        flex-wrap: wrap;
+        display: flex;
+        gap: 20px;
+        
+    }
+    #productos article{
+        flex-grow: 1;
+        flex-shrink: 0 ;
+        flex-basis: 300px;
+    }
+ 
+
+}
+@media all and (min-width: 1200px){
+    #productos article{
+        flex-basis: 250px;
     }
 }
-
-/*consulta el tamaño del navegador para saber si estoy en escritorio*/
-@media all and (min-width:1200px){
-    body{
-        background-color: grey;
-    }
-
-    h1{
-        font-size: 4em;
-    }
-}
-
-/*si escribo reglas por fuera de los @media y despues de ellos, estas nuevas reglas afectan DESDE EL CELULAR, y pisan las ordenes dentro de los @media*/
