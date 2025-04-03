@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding:0 ;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: yellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*consulta el tamaño del navegador para saber si estoy en tablet*/
+@media all and (min-width:768px){
+    body{
+        background-color: blueviolet;
+    }
+    h1{
+        text-align: center;
+    }
+}
+
+/*consulta el tamaño del navegador para saber si estoy en escritorio*/
+@media all and (min-width:1200px){
+    body{
+        background-color: grey;
+    }
+
+    h1{
+        font-size: 4em;
+    }
+}
+
+/*si escribo reglas por fuera de los @media y despues de ellos, estas nuevas reglas afectan DESDE EL CELULAR, y pisan las ordenes dentro de los @media*/
